@@ -1,0 +1,19 @@
+{
+  "name": "mind-fire-test-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumardurgesh91/mind-fire-test-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kumardurgesh91/mind-fire-test-backend/issues"
+  },
+  "homepage": "https://github.com/kumardurgesh91/mind-fire-test-backend#readme"
+}
