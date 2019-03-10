@@ -16,6 +16,7 @@ console.log(userController.create);
 
 router.post('/user/login', userController.login);
 router.post('/user/register', userController.register);
+router.get('/user', auth.authenticate, userController.get);
 router.route('/products/:id')
     .get(auth.authenticate, productController.get)
     .put(auth.authenticate, productController.update)

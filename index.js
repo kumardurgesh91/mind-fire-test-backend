@@ -4,6 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // Import Mongoose
 const mongoose = require('mongoose');
+const cors = require('cors')
+
 const apiRoutes = require("./api-routes");
 // Initialize the app
 const app = express();
@@ -12,6 +14,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+app.use(cors());
 // Connect to Mongoose and set connection variable
 mongoose.connect(config.db_url);
 mongoose.connection.on('error', function (err) {

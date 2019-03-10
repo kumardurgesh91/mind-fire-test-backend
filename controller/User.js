@@ -2,6 +2,21 @@ let UserModel = require('./../model/User');
 let ErrorMessage = require('./../errors.js');
 let Auth = require('./Auth');
 
+exports.get = async function(req, res, next) {
+    const id = req.auth_user._id;
+    
+    try {
+        let user = await UserModel.findOne({_id:id});
+        user = user.toJSON();
+        delete user.salt;
+        delete user.hash;
+        const token = Auth.getToken(user._id);
+        return res.status(200).send({token, user});
+    } catch(e) {
+        throw new Error(e);
+    }
+}
+
 exports.register = async function (req, res, next) {
 
 
